@@ -1,0 +1,201 @@
+/*-Header- */
+
+.wrap {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 1000;
+}
+
+header:hover {
+  background-color: rgba(255, 255, 255);
+}
+
+.header-wrap {
+  max-width: 1600px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-wrap .header-logo {
+  width: 87px;
+  height: 17px;
+  margin: 32px 0 31px 30px;
+}
+
+.header-wrap .header-logo a {
+  display: flex;
+  height: 100%;
+}
+
+.header-wrap .gnb-menu {
+  display: flex;
+}
+
+.header-wrap .gnb-menu li a {
+  display: inline-block;
+  padding: 29px 0 30px 0;
+  margin: 0 32px;
+  font-weight: normal;
+  position: relative;
+}
+
+.header-wrap .gnb-menu li a:hover:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0px;
+  bottom: 20px;
+  background-color: #1ec545;
+}
+
+.header-wrap .header-util {
+  width: 144px;
+  margin: 29px 25px 28px 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-wrap .header-util .header-lang a {
+  display: inline-block;
+  font-size: 12px;
+  font-family: "NanumSquare";
+}
+
+.header-wrap .header-util .header-lang span {
+  font-size: 12px;
+  margin: 0 7px;
+}
+
+.header-wrap .header-util .sitemap-box {
+  width: 24px;
+  height: 23px;
+}
+
+.header-wrap .header-util .sitemap-box a {
+  height: 100%;
+}
+
+.header-wrap .header-util .header-lang a:nth-child(3) {
+  opacity: 0.6;
+}
+
+.header-wrap .header-util .sitemap-box a svg:hover {
+  fill: #1ec545;
+}
+
+/* -Main-*/
+
+/* Slide */
+
+.main-wrap {
+  width: 100%;
+  padding: 80px 0 160px 0;
+}
+
+.main-slide-container {
+  position: relative;
+  padding-top: 40.21%;
+  background-image: url("../img/img_main_clova.jpg");
+}
+
+.slide-info-container {
+  position: relative;
+}
+
+.slide-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255);
+}
+
+.slide-info .slide-text-box {
+  position: absolute;
+  left: 160px;
+  bottom: 157px;
+}
+
+.slide-info .slide-text-box h2 {
+  margin: 0 0 32px;
+  line-height: 46px;
+}
+
+.slide-info .slide-text-box p {
+  line-height: 1.6;
+}
+.slide-info .slide-logo {
+  position: absolute;
+  right: 160px;
+  bottom: 75px;
+}
+
+.slide-info-container .slide-progressbar {
+  position: absolute;
+  width: calc(100% - 320px);
+  left: 160px;
+  bottom: 221px;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+}
+
+.slide-info-container .slid-paging {
+  position: absolute;
+  left: 160px;
+  bottom: 114px;
+  font-size: 12px;
+  line-height: 1;
+  font-family: "NanumSquare-L";
+  color: rgba(255, 255, 255);
+}
+
+.slide-info-container .slid-paging span:nth-child(1) {
+  padding: 0 14px 0 0;
+}
+
+.slide-info-container .slid-paging span:nth-child(1):after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 1px;
+  height: 10px;
+  background-color: rgb(214, 214, 213);
+}
+
+.slide-info-container button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(239, 239, 239);
+}
+
+.slide-info-container button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.slide-info-container button svg {
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+.slide-info-container .btn-prev {
+  position: absolute;
+  left: 85px;
+  bottom: 198px;
+}
+
+.slide-info-container .btn-next {
+  position: absolute;
+  right: 85px;
+  bottom: 198px;
+}
