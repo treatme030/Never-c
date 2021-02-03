@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "NanumSquare";
+  src: url("../font/NanumSquareOTFRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NanumSquare-L";
+  src: url("../font/NanumSquareOTFLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NanumSquare-EB";
+  src: url("../font/NanumSquareOTFExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NanumSquare-B";
+  src: url("../font/NanumSquareOTFBold.woff") format("woff");
+}
+
+body {
+  font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial",
+    "AppleSDGothicNeo", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: rgb(51, 51, 51);
+}
+
+a {
+  color: rgb(51, 51, 51);
+}
+
+div,
+ul,
+li {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Font-Family */
+
+.fm-L {
+  font-family: "NanumSquare-L";
+}
+
+.fm-B {
+  font-family: "NanumSquare-B";
+}
+
+.fm-EB {
+  font-family: "NanumSquare-EB";
+}
+
+/* Font-Size */
+
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+  font-family: "NanumSquare-EB";
+}
+
+h3 {
+  font-size: 32px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-22 {
+  font-size: 22px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+/* Font-Weight */
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+/* Margin */
+
+.mr-41 {
+  margin-right: 41px;
+}
+
+/* Color */
+
+.c-g {
+  color: #1ec545;
+}
