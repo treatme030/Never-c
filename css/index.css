@@ -350,17 +350,6 @@ header:hover {
   flex-wrap: wrap;
 }
 
-/* content-service 박스 하단 slideUp 부분 보이지 않게 가상공간으로 덮음 */
-.content-service .service-list-container:after {
-  content: "";
-  position: absolute;
-  bottom: -112px;
-  left: 0;
-  width: 100%;
-  height: 112px;
-  background-color: rgb(255, 255, 255);
-}
-
 .content-service .service-list-container .service-box {
   display: block;
   position: relative;
@@ -376,7 +365,8 @@ header:hover {
   height: 100%;
   top: 0;
   left: 0;
-  transition: 0.2s;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .service-box-link:hover {
@@ -405,7 +395,7 @@ header:hover {
 /* slideUp 애니메이션 적용 */
 .service-box .service-box-link:hover .service-info {
   animation: slideUp 0.3s;
-  animation-fill-mode: both;
+  animation-fill-mode: both; /*변화상태 유지*/
 }
 
 .service-box .service-box-link .service-info dt {
