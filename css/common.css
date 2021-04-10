@@ -18,15 +18,6 @@
     src: url("../font/NanumSquareOTFBold.woff") format("woff");
 }
 
-@keyframes slideUp {
-    form {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-133px);
-    }
-}
-
 body {
     font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica",
         "Arial", "AppleSDGothicNeo", sans-serif;

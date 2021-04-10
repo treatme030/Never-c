@@ -1,0 +1,152 @@
+* {
+    box-sizing: content-box;
+}
+
+body, button, input, select {
+    font-family: -apple-system,BlinkMacSystemFont,NanumSquare,
+    Segoe UI,Avenir,Helvetica Neue,Roboto,Oxygen,Ubuntu,
+    Cantarell,Fira Sans,Droid Sans,Malgun Gothic,"\B9D1\C740 \ACE0\B515",
+    sans-serif;
+}
+
+body {
+    font-weight: 400;
+    color: #212121;
+}
+
+/* font */
+@font-face {
+    font-family: "NanumSquare";
+    src: url("../font/NanumSquareOTFRegular.woff") format("woff");
+}
+
+/* animation */
+@keyframes moveUp {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* text */
+h2 {
+    line-height: 1.2;
+    font-size: 3.75rem;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 3.125rem;
+    line-height: 1.36;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 2.75rem;
+    line-height: 1.43;
+}
+
+p {
+    line-height: 1.75;
+}
+
+/* layout */
+div,
+ul,
+li {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.inner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 100px;
+    padding-right: 100px;
+    word-break: keep-all;
+}
+
+.text-wrap {
+    width: 45%;
+    box-sizing: border-box;
+    padding-right: 100px;
+    color: #fff;
+}
+
+.text-box h3 {
+    margin-top: 26px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #212121;
+}
+
+.text-box p {
+    margin: 1.375em 0;
+    color: rgba(0,0,0,0.8);
+}
+
+.point-wrap {
+    width: 55%;
+    box-sizing: border-box;
+}
+
+.svg-icon {
+    width: 63px;
+    height: 14px;
+}
+
+.download.btn1 {
+    padding: .65em 1.12em;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 2px;
+    font-size: .875rem;
+    border-color: hsla(0,0%,100%,.7);
+    background-color: transparent;
+    color: #fff;
+    transition: .2s;
+}
+
+.download.btn2 {
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    background-color: #05c3a7;
+    border-radius: 3px;
+    padding: 1em 2.77em;
+    transition: .2s;
+}
+
+.download:hover {
+    background-color: #04b89e;
+}
+
+figure {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 68px;
+    height: 68px;
+    margin: 0;
+}
+
+.detail-btn {
+    color: #06a0fe;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+}
+
+.detail-btn svg {
+    width: 16px;
+    height: 1.0625rem;
+    margin-left: 0.4em;
+}
+
+.hidden {
+    display: none;
+}
