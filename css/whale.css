@@ -9,6 +9,32 @@
     right: 0;
     left: 0;
     z-index: 20;
+    transition: .3s ease-in;
+}
+
+#whale-header.visible {
+    background-color: #fff;
+    box-shadow: 0 2px 16px 0 rgb(0 0 0 / 12%);
+}
+
+#whale-header.visible a {
+    color: #121212;
+    transition: .2s;
+}
+
+#whale-header.visible :hover {
+    color: #04b89e;
+}
+
+#whale-header.visible .naver-logo {
+    color: #03c75a;
+}
+
+#whale-header.visible .download.btn1,
+#whale-header.visible .download.btn1:hover {
+    color: #fff;
+    border-color: #05c3a7;
+    background-color: #05c3a7;
 }
 
 #whale-header .inner {
@@ -45,6 +71,143 @@
 
 #whale-header nav a:hover {
     color: #04b89e;
+}
+
+.hidden-menu {
+    padding: 5px;
+    line-height: 0;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: none;
+}
+
+.hidden-menu svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 200;
+    display: none;
+    transition: 5s;
+}
+
+#sidebar .sidebar-bg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+#sidebar .side-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 255px;
+    max-width: 100%;
+    padding-left: 30px;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform .15s cubic-bezier(.4,0,.6,1);
+}
+
+#sidebar.opened {
+    pointer-events: auto;
+}
+
+#sidebar.opened .sidebar-bg {
+    opacity: 1;
+}
+
+#sidebar.opened .side-menu {
+    transform: translateX(0);
+    transition: transform .5s cubic-bezier(0,0,.2,1)
+}
+
+#sidebar .side-menu li h4 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 3.75;
+}
+
+#sidebar .side-menu > li {
+    border-top: 1px solid rgba(221,226,229,.5);
+}
+
+#sidebar .side-menu a {
+    color: #121212;
+    transition: color .2s;
+}
+
+#sidebar .side-menu a:hover {
+    color: #04b89e;
+}
+
+#sidebar .side-menu .side-item {
+    padding-bottom: 20px;
+}
+
+#sidebar .side-menu .side-item a {
+    line-height: 2.35;
+}
+
+@media (max-width: 850px) {
+    #whale-header .inner {
+        height: 4.125rem;
+    }
+    .whale-header-logo a {
+        padding-bottom: 0.183em;
+    }
+    .whale-header-logo .whale-logo {
+        width: 58.4px;
+        height: 16px;
+    }
+    #whale-header nav a {
+        padding: 0 0.53em;
+    }
+}
+
+@media (max-width: 600px) {
+    #whale-header .inner {
+        height: 3.125em;
+        max-width: none;
+    }
+    .whale-header-logo a {
+        padding-bottom: 0.139em;
+    }
+    .whale-header-logo .whale-logo {
+        width: 51.1px;
+        height: 14px;
+    }
+    #whale-header nav,
+    #whale-header .download.btn1 {
+        display: none;
+    }
+    .hidden-menu {
+        display: block;
+    }
+
+    #whale-header.visible .hidden-menu {
+        color: #121212;
+    }
+    #sidebar {
+        display: block;
+    }
 }
 
 /* main */
@@ -98,6 +261,32 @@
     margin: -3% 0 -11% -7%;
 }
 
+@media (max-width: 1060px) {
+    .browser .inner {
+        height: 720px;
+    }
+}
+
+@media (max-width: 850px) {
+    .browser .hero-wrap video {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .browser .inner {
+        height: 500px;
+        justify-content: center;
+    }
+    .browser .inner .point-wrap {
+        display: none;
+    }
+    .browser .inner .text-wrap .text-box p{
+        font-size: 1rem;
+        margin: 1.5625em 0;
+    }
+}
+
 /* utility */
 .utility .inner {
     height: 58em;
@@ -110,11 +299,38 @@
     background-image: url(../img/whale-img/utility/dual-tab.png);
 }
 
-/* 자바스크립트 적용 전 이미지만 우선 배치 */
+/* lottie라는 after effect가 적용된 애니메이션으로 이미지만 배치*/
 .utility .inner .point-wrap img {
     width: 100%;
     margin: -3% 0 -11%;
-    
+}
+
+@media (max-width: 1060px) {
+    .utility .inner {
+        height: 52em;
+    }
+}
+
+@media (max-width: 850px) {
+    .utility .inner {
+        height: 46em;
+    }
+}
+
+@media (max-width: 600px) {
+    .utility .inner {
+        height: auto;
+        flex-direction: column;
+        padding-top: 3.75rem;
+        padding-bottom: 4rem;
+    }
+    .utility .inner .text-wrap {
+        padding: 0 10px;
+    }
+    .utility .inner .point-wrap img {
+        min-width: 320px;
+        margin-bottom: 5px;
+    }
 }
 
 /* security */
@@ -154,9 +370,50 @@
     align-items: center;
 }
 
-.security .inner .point-wrap img {
+.security .inner .point-box {
+    position: relative;
+    padding-top: 75%;
+}
+
+/* lottie라는 after effect가 적용된 애니메이션으로 */
+/* 기본 이미지 위에 탭모양 포지션 잡아줌 */
+.security .inner .point-wrap .point-box img {
+    position: absolute;
+    top: 10%;
+    left: 0;
     width: 114%;
+    height: 100%;
     margin: -3% 0 -11% -7%;
+}
+
+.security .inner .point-wrap .point-box span {
+    position: absolute;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(0);
+    transition: .5s cubic-bezier(0,.64,.68,1.44);
+}
+
+.security .inner .point-wrap .point-box span:nth-child(2) {
+    top: 30%;
+    left: 10%;
+    width: 265px;
+    height: 143px;
+    background-image: url(../img/whale-img/security/security_tab1.png);
+}
+
+.security .inner .point-wrap .point-box span:nth-child(3) {
+    right: 10%;
+    bottom: 20%;
+    width: 180px;
+    height: 115px;
+    background-image: url(../img/whale-img/security/security_tab2.png);
+}
+
+.security .inner .point-wrap .point-box .security-tab {
+    display: none;
 }
 
 .security .inner .text-wrap {
@@ -172,6 +429,64 @@
 .security .inner .text-wrap .text-box p,
 .security .inner .text-wrap .text-box .detail-btn {
     color: #fff;
+}
+
+@media (max-width: 1480px) {
+    .security .inner .point-wrap .point-box span:nth-child(2) {
+        width: 17.5vw;
+        height: 9.5vw;
+    }
+    .security .inner .point-wrap .point-box span:nth-child(3) {
+        width: 11.5vw;
+        height: 8vw;
+    }
+}
+
+@media (max-width: 1060px) {
+    .security .move-bg {
+        height: 700px;
+    }
+    .security .inner {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        height: calc(700px - 16rem);
+    }
+}
+
+@media (max-width: 850px) {
+    .security .inner .text-wrap {
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .security .move-bg {
+        display: none;
+    }
+    .security .inner {
+        height: auto;
+        flex-direction: column-reverse;
+        padding-top: 3.75rem;
+        padding-bottom: 4rem;
+    }
+    .security .inner .text-wrap {
+        padding: 0 10px;
+    }
+    .security .inner .point-wrap .point-box img:first-child,
+    .security .inner .point-wrap .point-box span {
+        display: none;
+    }
+
+    .security .inner .point-wrap .point-box {
+        padding-top: 0;
+        min-width: 320px;
+        min-height: 250px;
+    }
+    .security .inner .point-wrap .point-box .security-tab {
+        display: block;
+        min-width: 100%;
+        height: 100%;
+    }
 }
 
 /* custom */
@@ -248,19 +563,95 @@
     overflow: hidden;
 }
 
-.custom .custom-wrap .custom-clock .clock-box:before,
-.custom .custom-wrap .custom-clock .clock-box:after {
+.custom .custom-wrap .custom-clock .clock-box span {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../img/whale-img/custom/bg_custom_digital.4486001e.png);
     background-size: contain;
 }
 
-.custom .custom-wrap .custom-clock .clock-box:after {
+.custom .custom-wrap .custom-clock .clock-box .digital {
+    background-image: url(../img/whale-img/custom/bg_custom_digital.4486001e.png);
+    
+}
+
+.custom .custom-wrap .custom-clock .clock-box .analog {
     left: 100%;
     background-image: url(../img/whale-img/custom/bg_custom_analog.caf8438a.png);
+}
+
+.custom-wallpaper {
+    width: 100%;
+    margin: -20px 0 117px;
+    display: none;
+}
+
+@media (max-width: 1480px) {
+    .custom .inner h3 {
+        font-size: 3.125rem;
+    }
+}
+
+@media (max-width: 1060px) {
+    .custom {
+        height: 1075px;
+    }
+    .custom .inner {
+        padding-top: 85px;
+    }
+    .custom .inner p {
+        width: 25em;
+        margin: 1.3em auto 0;
+    }
+    .custom .custom-wrap .custom-bg.left {
+        width: 235px;
+        height: 249px;
+    }
+    .custom .custom-wrap .custom-bg.down {
+        width: 366px;
+        height: 192px;
+    }
+    .custom .custom-wrap .custom-bg.right {
+        width: 249px;
+        height: 410px;
+    }
+    .custom .custom-wrap .custom-clock {
+        width: 647.25px;
+        height: 444px;
+    }
+    .custom .custom-wrap .custom-clock .clock-box {
+        width: 570px;
+        height: 297.75px;
+        margin-top: 85.125px;
+        margin-left: 38.625px;
+    }
+}
+
+@media (max-width: 850px) {
+    .custom {
+        height: auto;
+    }
+    .custom .inner h3 {
+        font-size: 2.5rem;
+    }
+    .custom .custom-wrap {
+        display: none;
+    }
+    .custom-wallpaper {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom .inner h3 {
+        font-size: 1.75rem;
+        line-height: 1.46;
+    }
+    .custom .inner p {
+        width: 18em;
+        margin: 1.3em auto 0;
+    }
 }
 
 /* whale-download */
@@ -286,6 +677,20 @@
     background-image: url(../img/whale-img/ico_whale_logo.61f46a74.png);
     background-size: contain;
     margin: 0 auto 40px;
+}
+
+@media (max-width: 850px) {
+    .whale-download .inner {
+        padding-top: 2.8125rem;
+        padding-bottom: 2.8125rem;
+    }
+    .whale-download .inner h4 {
+        margin-bottom: 30px;
+    }
+    .whale-download .inner h4:before {
+        width: 105px;
+        height: 78px;
+    }
 }
 
 /* footer */
@@ -385,6 +790,32 @@ footer .inner .company-info-wrap .sns .facebook svg {
 footer .inner .company-info-wrap .sns .instagram svg {
     width: 18px;
     height: 17px;
+}
+
+@media (max-width: 850px) {
+    footer .inner .company-info-wrap {
+        flex-direction: column;
+    }
+    footer .inner .company-info-wrap .policy a {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 633px) {
+    footer .inner .company-info-wrap .policy a:nth-child(3) {
+        order: 1;/*default is 0*/
+    }
+}
+
+@media (max-width: 600px) {
+    footer .inner .content-info-wrap {
+        display: none;
+    }
+    footer .inner .company-info-wrap .policy {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 
