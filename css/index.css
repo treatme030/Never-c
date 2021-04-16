@@ -114,7 +114,6 @@ header:hover {
     left: 0;
     width: 100%;
     height: 100%;
-<<<<<<< Updated upstream
     display: flex;
 }
 
@@ -125,12 +124,6 @@ header:hover {
 /* img 기본 아래 여백 없애주기 */
 .main-slide-container .slide-wrap .slide img {
     vertical-align: top;
-=======
-}
-
-.main-slide-container .slide-wrap li img {
-    vertical-align: top;
->>>>>>> Stashed changes
 }
 
 .slide-info-container {
@@ -139,10 +132,6 @@ header:hover {
     left: 0;
     width: 100%;
     height: 100%;
-<<<<<<< Updated upstream
-=======
-    display: flex;
->>>>>>> Stashed changes
 }
 
 .slide-info {
