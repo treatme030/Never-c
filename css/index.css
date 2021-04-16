@@ -105,15 +105,48 @@ header:hover {
 .main-slide-container {
     position: relative;
     padding-top: 40.21%;
-    background-image: url("../img/img_main_clova.jpg");
+    overflow: hidden;
+}
+
+.main-slide-container .slide-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+<<<<<<< Updated upstream
+    display: flex;
+}
+
+.main-slide-container .slide-wrap .slide {
+    
+}
+
+/* img 기본 아래 여백 없애주기 */
+.main-slide-container .slide-wrap .slide img {
+    vertical-align: top;
+=======
+}
+
+.main-slide-container .slide-wrap li img {
+    vertical-align: top;
+>>>>>>> Stashed changes
 }
 
 .slide-info-container {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+<<<<<<< Updated upstream
+=======
+    display: flex;
+>>>>>>> Stashed changes
 }
 
 .slide-info {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     color: rgb(255, 255, 255);
@@ -136,7 +169,8 @@ header:hover {
 .slide-info .slide-logo {
     position: absolute;
     right: 160px;
-    bottom: 75px;
+    background-image: url(../img/icons.png);
+    background-size: 474px 1500px;
 }
 
 .slide-info-container .slide-progressbar {
@@ -173,32 +207,32 @@ header:hover {
 }
 
 .slide-info-container button {
+    position: absolute;
+    bottom: 198px;
     width: 46px;
     height: 46px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    background-color: rgb(239, 239, 239);
-}
-
-.slide-info-container button:hover {
-    background-color: rgb(255, 255, 255);
-}
-
-.slide-info-container button svg {
-    fill: rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    background-image: url(../img/icons.png);
+    background-size: 474px 1500px;
+    background-color: transparent;
+    transition: opacity .3s;
 }
 
 .slide-info-container .btn-prev {
-    position: absolute;
     left: 85px;
-    bottom: 198px;
+    background-position: -296px -107px;
 }
 
 .slide-info-container .btn-next {
-    position: absolute;
     right: 85px;
-    bottom: 198px;
+    background-position: -346px -107px;
+}
+
+.slide-info-container button:hover {
+    opacity: 1;
 }
 
 /* Content */
@@ -380,6 +414,7 @@ header:hover {
     padding: 50px 0 0 30px;
     bottom: -103px;
     color: rgb(255, 255, 255);
+    transition: bottom .3s;
 }
 
 .service-box .service-box-link .service-info:before {
@@ -393,10 +428,8 @@ header:hover {
     background-position: -199px -129px;
 }
 
-/* slideUp 애니메이션 적용 */
 .service-box .service-box-link:hover .service-info {
-    animation: slideUp 0.3s;
-    animation-fill-mode: both; /*변화상태 유지*/
+    bottom: 30px;
 }
 
 .service-box .service-box-link .service-info dt {
