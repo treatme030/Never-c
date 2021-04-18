@@ -57,6 +57,8 @@ function moveSlide(num){
         setTimeout(function(){
             slideWrap.classList.remove('animated');
             slideWrap.style.transform = 'translateX(-' + (slideWidth) + 'px)';
+            text[slideArray.length - 1].style.opacity = '0';
+            text[0].style.opacity = '1';
             currentIndex = 0;
         },500);
         setTimeout(function(){
@@ -67,6 +69,7 @@ function moveSlide(num){
         setTimeout(function(){
             slideWrap.classList.remove('animated');
             slideWrap.style.transform = 'translateX(-' + (slideArray.length) * (slideWidth) + 'px)';
+            text[slideArray.length - 1].style.opacity = '1';
             currentIndex = slideArray.length - 1;
         },500);
         setTimeout(function(){
