@@ -1,9 +1,8 @@
 let slideWrap = document.getElementById('slide-wrap');
 let slide = document.getElementsByClassName('slide');
+let slideCount = slide.length;
 let slideWidth = window.outerWidth;
-let slideArray = [...slide];
 let currentIndex = 0;
-
 
 // //slide 복사
 dupulicateSlide();
@@ -21,7 +20,8 @@ function dupulicateSlide(){
 
     updateWidth();
     updatePosition();
-    //animated 클래스 추가하기
+    //slideWrap의 기본 위치를 정하고, 0.1s 뒤에 animated 클래스 추가하기
+    //그렇지 않으면 배치하는 모습이 그대로 보여짐
     setTimeout(function(){
         slideWrap.classList.add('animated');
     },100);
@@ -50,15 +50,18 @@ prevbtn.addEventListener('click', function(){
 });
 
 let text = document.getElementsByClassName('slide-info');
+let currentPage = document.getElementById('current');
+let progressBar = document.getElementById('fill');
+
 function moveSlide(num){
     currentIndex = num;
-    //slide 처음과 끝으로 갔을 때 순간이동
-    if(currentIndex === slideArray.length){
+    console.log(currentIndex, slideCount);
+
+    //slide 처음과 끝으로 이동한 뒤 순간이동
+    if(currentIndex === slideCount){
         setTimeout(function(){
             slideWrap.classList.remove('animated');
             slideWrap.style.transform = 'translateX(-' + (slideWidth) + 'px)';
-            text[slideArray.length - 1].style.opacity = '0';
-            text[0].style.opacity = '1';
             currentIndex = 0;
         },500);
         setTimeout(function(){
@@ -68,9 +71,8 @@ function moveSlide(num){
     if(currentIndex < 0){
         setTimeout(function(){
             slideWrap.classList.remove('animated');
-            slideWrap.style.transform = 'translateX(-' + (slideArray.length) * (slideWidth) + 'px)';
-            text[slideArray.length - 1].style.opacity = '1';
-            currentIndex = slideArray.length - 1;
+            slideWrap.style.transform = 'translateX(-' + (slideCount * slideWidth) + 'px)';
+            currentIndex = slideCount - 1;
         },500);
         setTimeout(function(){
             slideWrap.classList.add('animated');
@@ -78,19 +80,38 @@ function moveSlide(num){
     } 
     //slide 이동
     slideWrap.style.transform = 'translateX(-' + (currentIndex + 1) * (slideWidth) + 'px)';
-    for( let i = 0;i < text.length;i++){
-        if(text[i] !== currentIndex){
-            text[i].style.opacity = '0';
-        }
-        text[currentIndex].style.opacity = '1';
+    
+    pageChange();
+    textprogressBarChange();
+}
+
+//페이지 표시 나타내기
+function pageChange(){
+    currentPage.innerHTML = `${(currentIndex + 1) % slideCount}`;
+    if((currentIndex + 1) === slideCount || (currentIndex + 1) === 0){
+        currentPage.innerHTML = slideCount;
     }
+}
+
+//텍스트와 진행바 나타내기
+function textprogressBarChange(){
+    for(let i = 0; i < slideCount; i++){
+        text[i].style.opacity = '0';
+        if(currentIndex === slideCount){
+            text[0].style.opacity = '1';
+            progressBar.style.width = (100 / 6) + '%';
+        } else if(currentIndex < 0){
+            text[slideCount - 1].style.opacity = '1';
+            progressBar.style.width = (slideCount - 1) * (100 / 6) + '%';
+        }
+    }
+    text[currentIndex].style.opacity = '1';
+    progressBar.style.width = (currentIndex + 1) * (100 / 6) + '%';
 }
 
 //자동슬라이드
 setInterval(function(){
-    let nextIndex = (currentIndex + 1) % slide.length;
-    currentIndex = nextIndex;
-    moveSlide(currentIndex);
+    moveSlide(currentIndex + 1);
 }, 5000);
 
 moveSlide(0);//초기값

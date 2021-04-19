@@ -117,7 +117,7 @@ header:hover {
 
 .main-slide-container {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #slide-wrap {
@@ -164,7 +164,6 @@ header:hover {
     width: 100%;
     height: 100%;
     color: rgb(255, 255, 255);
-    /* opacity: 0; */
 }
 
 .slide-info .slide-logo {
@@ -244,7 +243,7 @@ header:hover {
     background-color: rgba(255, 255, 255, 0.2);;
 }
 
-.slide-info-container .slide-progressbar .fill {
+#fill {
     position: absolute;
     top: 0;
     left: 0;
