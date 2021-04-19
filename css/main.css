@@ -278,7 +278,7 @@ header:hover {
 .slide-info-container .slid-paging .total:before {
     content: "";
     position: absolute;
-    left: 7px;
+    left: 5px;
     top: 50%;
     width: 1px;
     height: 8px;
