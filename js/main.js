@@ -4,6 +4,7 @@ let slideCount = slide.length;
 let slideWidth = 1903;
 let currentIndex = 0;
 
+//각 슬라이드 넓이
 for(item of slide){
     item.style.width = slideWidth + 'px';
 }
