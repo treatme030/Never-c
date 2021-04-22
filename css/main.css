@@ -112,11 +112,13 @@ header:hover {
 
 /* Slide */
 .main-wrap {
+    width: 100%;
     padding: 80px 0 160px;
 }
 
 .main-slide-container {
     position: relative;
+    width: 100%;
     overflow: hidden;
 }
 

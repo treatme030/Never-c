@@ -1,8 +1,12 @@
 let slideWrap = document.getElementById('slide-wrap');
 let slide = document.getElementsByClassName('slide');
 let slideCount = slide.length;
-let slideWidth = window.outerWidth;
+let slideWidth = 1903;
 let currentIndex = 0;
+
+for(item of slide){
+    item.style.width = slideWidth + 'px';
+}
 
 // //slide 복사
 dupulicateSlide();
@@ -115,3 +119,4 @@ setInterval(function(){
 }, 5000);
 
 moveSlide(0);//초기값
+
