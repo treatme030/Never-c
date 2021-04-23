@@ -1,15 +1,22 @@
+//header 스크롤 이벤트
+let beforescroll = 0;//이전 스크롤 양
+window.addEventListener('scroll', function(){
+    if(window.scrollY > 80 && beforescroll < window.scrollY){//스크롤 아래방향
+        document.getElementById('header').classList.add('up');
+    } else {//스크롤 위방향
+        document.getElementById('header').classList.remove('up');
+    }
+    beforescroll = window.scrollY;//이전 스크롤 양에 현재 스크롤 양 업데이트
+});
+
+//hero 슬라이드 만들기
 let slideWrap = document.getElementById('slide-wrap');
 let slide = document.getElementsByClassName('slide');
 let slideCount = slide.length;
-let slideWidth = 1903;
+let slideWidth = slide[0].clientWidth;
 let currentIndex = 0;
 
-//각 슬라이드 넓이
-for(item of slide){
-    item.style.width = slideWidth + 'px';
-}
-
-// //slide 복사
+//slide 복사
 dupulicateSlide();
 
 function dupulicateSlide(){
@@ -34,8 +41,14 @@ function dupulicateSlide(){
     
 //slide-wrap 넓이 구하기
 function updateWidth(){
+    //복사된 슬라이드 연결된 새로운 슬라이드 불러오기
     let newSlide = document.getElementsByClassName('slide');
+    //slide-wrap 넓이
     slideWrap.style.width = slideWidth * newSlide.length + 'px';
+    //각 슬라이드 넓이
+    for(let item of newSlide){
+        item.style.width = slideWidth + 'px';
+    }
 }
 
 //slideWrap 위치 정해주기
@@ -43,7 +56,7 @@ function updatePosition(){
 slideWrap.style.transform = 'translateX(-' + (slideWidth) + 'px)';
 }
 
-// //prev/next 버튼 클릭 slide 이동
+//prev/next 버튼 클릭 slide 이동
 let prevbtn = document.getElementById('btn-prev');
 let nextbtn = document.getElementById('btn-next');
 
@@ -60,7 +73,6 @@ let progressBar = document.getElementById('fill');
 
 function moveSlide(num){
     currentIndex = num;
-    console.log(currentIndex, slideCount);
 
     //slide 처음과 끝으로 이동한 뒤 순간이동
     if(currentIndex === slideCount){
