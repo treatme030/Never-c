@@ -9,6 +9,30 @@ window.addEventListener('scroll', function(){
     beforescroll = window.scrollY;//이전 스크롤 양에 현재 스크롤 양 업데이트
 });
 
+
+//drop-menu 이벤트
+let menuItem = document.getElementsByClassName('gnb-menu-item');
+let dropMenuWrap = document.getElementsByClassName('gnb-dropmenu-wrap');
+let menuItemArray = [...menuItem];
+
+//drop-menu 열림
+menuItemArray.forEach((item, idx) => {
+    item.addEventListener('mouseenter', function(){
+        for(let dropItem of dropMenuWrap){
+            dropItem.classList.remove('open');
+        } 
+        dropMenuWrap[idx].classList.add('open');
+    })
+});
+
+//drop-menu 닫힘
+for(let item of dropMenuWrap){
+    item.addEventListener('mouseleave', function(){
+        item.classList.remove('open');
+    });
+}
+
+
 //hero 슬라이드 만들기
 let slideWrap = document.getElementById('slide-wrap');
 let slide = document.getElementsByClassName('slide');
