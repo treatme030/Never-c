@@ -59,11 +59,6 @@ body {
     position: relative;
 }
 
-.header-wrap .gnb-menu .gnb-menu-item:last-child {
-    position: relative;
-    padding-right: 25px;
-}
-
 .header-wrap .gnb-menu .gnb-menu-item:last-child:before {
     content: '';
     display: none;
@@ -76,10 +71,6 @@ body {
     background-repeat: no-repeat;
     background-size: 474px 1500px;
     background-position: -59px 0;
-}
-
-.header-wrap .gnb-menu .gnb-menu-item:last-child:hover:before {
-    display: block;
 }
 
 .header-wrap .gnb-menu .gnb-menu-item:after {
@@ -237,6 +228,39 @@ body {
     opacity: 1;
     width: 100%;
 } 
+
+.header-wrap .gnb-menu .gnb-menu-item:last-child,
+.gnb-dropmenu li .dropmenu-service {
+    position: relative;
+    padding-right: 25px;
+}
+
+.header-wrap .gnb-menu .gnb-menu-item:last-child:before,
+.gnb-dropmenu li .dropmenu-service:before {
+    content: '';
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 31px;
+    width: 18px;
+    height: 20px;
+    background-image: url(../img/icons.png);
+    background-repeat: no-repeat;
+    background-size: 474px 1500px;
+    background-position: -59px 0;
+}
+
+.gnb-dropmenu li .dropmenu-service:before {
+    top: 17px;
+    right: 74px;
+    background-position: -81px 0;
+}
+
+
+.header-wrap .gnb-menu .gnb-menu-item:last-child:hover:before,
+.gnb-dropmenu li .dropmenu-service:hover:before {
+    display: block;
+}
 
 /* -Main-*/
 
