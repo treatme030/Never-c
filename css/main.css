@@ -51,11 +51,7 @@ body {
     display: flex;
 }
 
-.gnb-dropmenu-wrap {
-    display: none;
-}
-
-.header-wrap .gnb-menu li a {
+.header-wrap .gnb-menu .gnb-menu-item {
     display: inline-block;
     padding: 29px 0 30px 0;
     margin: 0 32px;
@@ -63,7 +59,30 @@ body {
     position: relative;
 }
 
-.header-wrap .gnb-menu li a:after {
+.header-wrap .gnb-menu .gnb-menu-item:last-child {
+    position: relative;
+    padding-right: 25px;
+}
+
+.header-wrap .gnb-menu .gnb-menu-item:last-child:before {
+    content: '';
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 31px;
+    width: 18px;
+    height: 20px;
+    background-image: url(../img/icons.png);
+    background-repeat: no-repeat;
+    background-size: 474px 1500px;
+    background-position: -59px 0;
+}
+
+.header-wrap .gnb-menu .gnb-menu-item:last-child:hover:before {
+    display: block;
+}
+
+.header-wrap .gnb-menu .gnb-menu-item:after {
     content: "";
     position: absolute;
     width: 0;
@@ -74,7 +93,7 @@ body {
     transition: width .2s;
 }
 
-.header-wrap .gnb-menu li a:hover:after {
+.header-wrap .gnb-menu .gnb-menu-item:hover:after {
     width: 100%;
 }
 
@@ -110,8 +129,114 @@ body {
 }
 
 .header-wrap .header-util .sitemap-box a svg:hover {
+    transition: 0.2s;
     fill: #1ec545;
 }
+
+/* Gnb-dropmenu */
+.gnb-dropmenu-wrap {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 0;
+    min-width: 1100px;
+    text-align: center;
+    background-color: #1ec545;
+    font-size: 0;
+    z-index: 999;
+    transition: height 0.5s;
+}
+
+    .gnb-dropmenu-wrap.open {
+        height: 341px;
+        overflow: hidden;
+    }
+    .gnb-dropmenu-wrap.open .gnb-dropmenu {
+        display: inline-block;
+    }
+
+.gnb-dropmenu {
+    position: relative;
+    display: none;
+    vertical-align: top;
+    width: 190px;
+    height: 341px;
+    padding: 28px 0 0;
+    transition: background-color 0.2s;
+}
+
+.gnb-dropmenu:hover {
+    background-color: #0fb93c;
+}
+
+.gnb-dropmenu:before,
+.gnb-dropmenu:last-child:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #4bd16a;
+}
+
+.gnb-dropmenu:last-child:after {
+    right: 0;
+    left: auto;
+}
+
+.gnb-dropmenu li {
+    font-size: 14px;
+    text-align: left;
+    margin: 0 0 7px;
+}
+
+.gnb-dropmenu li.depth {
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.gnb-dropmenu li.classify {
+    padding-top: 20px;
+    border-top: 1px solid #4bd16a;
+}
+
+.gnb-dropmenu li .gnb-dropmenu-item {
+    display: inline-block;
+    padding: 0 0 0 28px;
+    color: #fff;
+    opacity: 0.8;
+    line-height: 1.2;
+    transition: opacity 0.2s;
+}
+
+.gnb-dropmenu li.depth .gnb-dropmenu-item{
+    opacity: 1;
+    font-weight: bold;
+}
+
+.gnb-dropmenu-item .underline{
+    position: relative;
+}
+
+.gnb-dropmenu-item .underline:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.2s;
+}
+
+.gnb-dropmenu li .gnb-dropmenu-item:hover .underline:before,
+.gnb-dropmenu li .gnb-dropmenu-item:hover {
+    opacity: 1;
+    width: 100%;
+} 
 
 /* -Main-*/
 
