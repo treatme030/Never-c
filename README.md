@@ -8,7 +8,21 @@
 따라 만들어 본 깃허브 사이트 주소: https://treatme030.github.io/Never-c/main.html
 
 ## 구현 내용
-  * 랜딩페이지
-  * Naver whale 페이지
+  ### 랜딩페이지
+
+  ![nw](https://user-images.githubusercontent.com/74355328/147023458-8ded196b-6236-4377-bf74-aa07dffa943e.gif)
+  
+  ### Naver whale 페이지
+  - whale 웹
+  
+   ![naverWhaleWeb](https://user-images.githubusercontent.com/74355328/147021694-74c2d599-4733-4089-b0de-59232aa41df7.gif)
+   
+  - whale 모바일
+  
+   ![nm](https://user-images.githubusercontent.com/74355328/147021697-1bc608d3-ab90-4d63-b150-abb6c90886bf.gif)
+   
+  - whale 모바일 반응형
+   
+   ![nmr](https://user-images.githubusercontent.com/74355328/147022540-ace71b59-6d0c-4bbe-ba7f-4f361ce2d405.gif)
 
 
