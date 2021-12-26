@@ -18,8 +18,8 @@
   
   ### Naver whale 페이지
    #### whale 웹
-    * 스크롤시 이미지 변경
-    * 배경화면이 위로 움직이는 애니메이션
+    - 스크롤시 이미지 변경
+    - 배경화면이 위로 움직이는 애니메이션
   
    ![naverWhaleWeb](https://user-images.githubusercontent.com/74355328/147021694-74c2d599-4733-4089-b0de-59232aa41df7.gif)
    
