@@ -17,7 +17,7 @@
   ![nw](https://user-images.githubusercontent.com/74355328/147023458-8ded196b-6236-4377-bf74-aa07dffa943e.gif)
   
   ### Naver whale 페이지
-   ## whale 웹
+   #### whale 웹
     * 스크롤시 이미지 변경
     * 배경화면이 위로 움직이는 애니메이션
   
