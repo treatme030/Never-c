@@ -9,11 +9,17 @@
 
 ## 구현 내용
   ### 랜딩페이지
+   * 캐러셀(라인, 페이지 표시)
+   * 드랍 메뉴
+   * 스크롤 방향감지 헤더
+   * 호버시 이미지 설명 나타내기
 
   ![nw](https://user-images.githubusercontent.com/74355328/147023458-8ded196b-6236-4377-bf74-aa07dffa943e.gif)
   
   ### Naver whale 페이지
-  - whale 웹
+   ## whale 웹
+    * 스크롤시 이미지 변경
+    * 배경화면이 위로 움직이는 애니메이션
   
    ![naverWhaleWeb](https://user-images.githubusercontent.com/74355328/147021694-74c2d599-4733-4089-b0de-59232aa41df7.gif)
    
@@ -21,7 +27,7 @@
   
    ![nm](https://user-images.githubusercontent.com/74355328/147021697-1bc608d3-ab90-4d63-b150-abb6c90886bf.gif)
    
-  - whale 모바일 반응형
+  - whale 반응형
    
    ![nmr](https://user-images.githubusercontent.com/74355328/147022540-ace71b59-6d0c-4bbe-ba7f-4f361ce2d405.gif)
 
